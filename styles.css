@@ -1,0 +1,264 @@
+/* FHI-inspired article layout — mobile-first */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #222222;
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #393C61;
+}
+
+a:hover,
+a:focus {
+  text-decoration-thickness: 2px;
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #393C61;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0.875rem 1.25rem;
+}
+
+.wordmark {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.header-divider {
+  width: 1px;
+  height: 1.25rem;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.project-name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Article */
+
+.article {
+  padding: 1.5rem 0 3rem;
+}
+
+.article-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.project-logo {
+  display: block;
+  max-width: 280px;
+  margin: 0 0 1.5rem;
+}
+
+h1 {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.4rem, 4vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #222222;
+}
+
+h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #222222;
+}
+
+section p {
+  margin: 0 0 1rem;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Invitation box */
+
+.invitation-box {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: #F7F6F5;
+  border-radius: 20px;
+}
+
+.invitation-box h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.survey-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: block;
+  padding: 0.9rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary {
+  background: #393C61;
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #2d304d;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Table of contents */
+
+.toc-box {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #F7F6F5;
+  border-radius: 20px;
+}
+
+.toc-box h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.toc-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc-box li {
+  margin: 0.5rem 0;
+}
+
+.toc-box a {
+  text-decoration: none;
+}
+
+.toc-box a::before {
+  content: "» ";
+  color: #393C61;
+}
+
+.toc-box a:hover,
+.toc-box a:focus {
+  text-decoration: underline;
+}
+
+/* Body links with » prefix */
+
+.contact a,
+section a:not(.btn) {
+  text-decoration: none;
+}
+
+.contact a::before,
+section a:not(.btn)::before {
+  content: "» ";
+}
+
+.contact a:hover,
+.contact a:focus,
+section a:not(.btn):hover,
+section a:not(.btn):focus {
+  text-decoration: underline;
+}
+
+.contact {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8e7e6;
+}
+
+/* Footer */
+
+.site-footer {
+  background: #393C61;
+  color: #ffffff;
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  text-decoration: underline;
+}
+
+/* Larger screens */
+
+@media (min-width: 640px) {
+  .article {
+    padding-top: 2.5rem;
+  }
+
+  .project-logo {
+    max-width: 320px;
+  }
+
+  .invitation-box,
+  .toc-box {
+    padding: 1.5rem 1.75rem;
+  }
+}
